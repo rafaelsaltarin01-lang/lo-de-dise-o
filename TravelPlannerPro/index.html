@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Planner Pro</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="logo">🌍 Travel Planner Pro</div>
+        <div class="user-actions">
+            <span id="welcome-text">Bienvenido, Viajero 👋</span>
+            <button id="theme-toggle" class="btn-theme">🌙 Modo Oscuro</button>
+        </div>
+    </header>
+
+    <main class="container">
+
+        <section id="registro-seccion" class="card-box">
+            <h2>📝 Registro del Viajero</h2>
+            <p>Regístrate para comenzar a planificar tus rutas y guardar tus destinos favoritos.</p>
+            <form id="register-form" class="form-grid">
+                <div class="form-group">
+                    <label for="reg-name">Nombre Completo:</label>
+                    <input type="text" id="reg-name" placeholder="Ej. Rafael Saltarin" required>
+                </div>
+                <div class="form-group">
+                    <label for="reg-email">Correo Electrónico:</label>
+                    <input type="email" id="reg-email" placeholder="Ej. rafael@mail.com" required>
+                </div>
+                <button type="submit" id="btn-comenzar" class="btn-primary">Comenzar 🚀</button>
+            </form>
+        </section>
+
+        <section class="dashboard card-box">
+            <h2>📊 Tu Dashboard de Viajes</h2>
+            <ul class="stats-list">
+                <li>🔍 Total Consultas Realizadas: <span id="counter-queries" class="badge">0</span></li>
+                <li>⭐ Destinos Guardados: <span id="counter-countries" class="badge">0</span></li>
+                <li>❤️ Atracciones Favoritas: <span id="counter-attractions" class="badge">0</span></li>
+            </ul>
+        </section>
+
+        <section class="search-box card-box">
+            <h2>🔍 Explorar un Nuevo Destino</h2>
+            <p>Introduce el nombre de un país en español o inglés para desplegar toda la información centralizada.</p>
+            <div class="search-bar">
+                <input type="text" id="search-input" placeholder="Ej. Colombia, Japan, France...">
+                <button id="btn-buscar" class="btn-secondary">Buscar Destino</button>
+            </div>
+            <div id="loader" class="loader-text" style="display: none;">⏳ Buscando información en los servidores, por favor espera...</div>
+        </section>
+
+        <section id="results-container" class="results-grid" style="display: none;">
+            
+            <div id="country-info" class="result-card project-card"></div>
+
+            <div id="weather-info" class="result-card weather-card"></div>
+
+            <div id="currency-info" class="result-card currency-card"></div>
+
+            <div id="tourism-info" class="result-card tourism-full"></div>
+
+        </section>
+
+    </main>
+
+    <script src="js/storage.js"></script>
+    <script src="js/countries.js"></script>
+    <script src="js/weather.js"></script>
+    <script src="js/currency.js"></script>
+    <script src="js/tourism.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
